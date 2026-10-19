@@ -1,0 +1,67 @@
+:root {
+    --primary-color: #B31942;
+    --font-main: 'Ovo', serif;
+    --card-width: 250px;
+    --spacing-md: 20px;
+}
+
+html{
+    font-size: 16px
+}
+
+
+header{
+    background-color: #B31942;
+    padding: 20px;
+}
+
+.search-section{
+    background-color: #002868;
+    padding: 20px;
+}
+
+.search-label{
+    color: white;
+}
+
+@font-face {
+    font-family: 'Ovo';
+    src: url('fonts/Ovo-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+body{
+    margin-top: 0;
+    margin:0;
+    font-family: "Ovo";
+}
+
+main{
+    padding: 20px;
+}
+
+h3{
+    font-size: 1.5rem;
+}
+
+.card-art{
+    width:250px;
+}
+
+.card-mana-cost {
+    font-size: 1.5rem;
+    display: inline-flex;
+    gap: 3px; /* Adds nice spacing between symbols */
+}
+
+.card-type{
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+
+.card-text{
+    display: inline-block;
+    max-width: 350px;
+}
