@@ -57,7 +57,7 @@ export function renderMtgCard(_cardName,_image,_cardType,_text,_cost=null){
 
 export function renderColorSwatch(_colorName, _colorRGB, _cssVariableName){
     const swatch = document.createElement('section');
-    swatch.style.width = '140px'
+    swatch.style.width = '160px'
     swatch.className="color-swatch";
     swatch.style.background = '#E0E0E0';
     swatch.style.textAlign = 'center';
