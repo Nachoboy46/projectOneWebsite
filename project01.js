@@ -168,6 +168,34 @@ function initTabButtons(tabsSection){
     });
 }
 
+function initaccordionSection(accordionSection){
+    accordionSection.addEventListener('click',function(event){
+        const accordionButton=event.target.closest('.accordion-button');
+        if(!accordionButton){
+            return;
+        }
+        const buttonState = accordionButton.getAttribute('aria-selected');
+
+        const accordionButtons=accordionSection.querySelectorAll('.accordion-button');
+        accordionButtons.forEach(function(button){
+            button.setAttribute('aria-selected','false');
+        });
+        const accordionBodySections = document.querySelectorAll('.accordion-section-body');
+        accordionBodySections.forEach(function(accordionBodySection){
+            accordionBodySection.setAttribute('aria-hidden','true');
+            accordionBodySection.hidden = true;
+        });
+
+        if(buttonState != 'true'){
+            accordionButton.setAttribute('aria-selected','true');
+            const accordionBodySection = accordionSection.querySelector('#'+accordionButton.getAttribute('aria-controls'));
+            accordionBodySection.setAttribute('aria-hidden','false');
+            accordionBodySection.hidden = false;
+        }
+        
+    });
+}
+
 // function initLinks(links){
 //     links.addEventListener("click", function (event){
 //         event.preventDefault();
@@ -196,6 +224,7 @@ initMtgCardHorizontalButtons(document.getElementById('mtg-cards-horizontal-tab')
 initMtgCardNoImageButtons(document.getElementById('mtg-cards-no-image-tab'))
 initShowCodeButton(document.getElementById('show-code-button'));
 initTabButtons(document.getElementById('tabs-section'));
+initaccordionSection(document.getElementById('accordion-section'))
 
 const colorSwatchesSection = document.getElementById('color-swatches-section');
 colorSwatchesSection.appendChild(Render.renderColorSwatch('Old Glory Red', 'B31942', "--primary-color"))
